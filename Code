@@ -1,0 +1,13 @@
+integer freeSpace;
+default
+{
+    state_entry()
+    {
+        llSetText("Free Script Memory Checker", <1.0, 1.0, 1.0>, 1.0);
+    }
+    touch_start (integer num)
+    {
+        freeSpace = llGetFreeMemory();
+        llOwnerSay("This script has " + (string)freeSpace + " bytes of memory left");
+    }
+}
